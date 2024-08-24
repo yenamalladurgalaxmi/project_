@@ -1,0 +1,15 @@
+<div class="search-book-container">
+    <h2>Book Serach</h2>
+    <form (submit)="searchBook()">
+        <input type="text" [(ngModel)]="bookTitle" placeholder="Enter book title" name="title" required />
+        <button type="submit">Search</button>
+    </form>
+
+    <div *ngIf="book" class="book-details">
+        <h3>{{ book.title }}</h3>
+        <p>Author: {{ book.author }}</p>
+        <p>Published_Year: {{ book.publication_year }}</p>
+        <p>Price: ${{ book.price.toFixed(2) }}</p>
+        <img [src]="book.imageUrl" alt="{{ book.title }} cover image" />
+    </div>
+</div>
