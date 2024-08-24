@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    background-image: url('finance.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5); /* Same transparency as header */
+    padding: 0.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.hero {
+    min-width: 100%;
+    background-color: rgba(0, 123, 255, 0.8); /* Slightly transparent blue */
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    display: flex;
+    animation: scrollHero 15s infinite; /* Updated to 15s total (5s per section) */
+}
+
+@keyframes scrollHero {
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(0%); }
+    33.33% { transform: translateX(-100%); }
+    53.33% { transform: translateX(-100%); }
+    66.66% { transform: translateX(-200%); }
+    86.66% { transform: translateX(-200%); }
+    100% { transform: translateX(0%); }
+}
+
+.hero:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Box shadow on hover */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.feature {
+    flex-basis: 30%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.feature:hover {
+    transform: scale(1.05); /* Zoom in slightly */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Create a more pronounced shadow */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
