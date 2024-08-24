@@ -1,0 +1,52 @@
+<div>
+  <h1>Novel Hub - Books List</h1>
+
+  <!-- Add New Book Section -->
+  <div>
+      <h2>Add New Book</h2>
+      <label for="new-title">Title:</label>
+      <input id="new-title" [(ngModel)]="newBook.title" placeholder="Title" />
+      
+      <label for="new-author">Author:</label>
+      <input id="new-author" [(ngModel)]="newBook.author" placeholder="Author" />
+      
+      <label for="new-year">Publication Year:</label>
+      <input id="new-year" type="number" [(ngModel)]="newBook.publication_year" placeholder="Publication Year" />
+      
+      <label for="new-image">Image URL:</label>
+      <input id="new-image" [(ngModel)]="newBook.imageUrl" placeholder="Image URL" />
+      
+      <button (click)="addBook()">Add Book</button>
+  </div>
+
+  <!-- Edit Book Section -->
+  <div *ngIf="selectedBook">
+      <h2>Edit Book</h2>
+      <label for="edit-title">Title:</label>
+      <input id="edit-title" [(ngModel)]="selectedBook.title" placeholder="Title" />
+      
+      <label for="edit-author">Author:</label>
+      <input id="edit-author" [(ngModel)]="selectedBook.author" placeholder="Author" />
+      
+      <label for="edit-year">Publication Year:</label>
+      <input id="edit-year" type="number" [(ngModel)]="selectedBook.publication_year" placeholder="Publication Year" />
+      
+      <label for="edit-image">Image URL:</label>
+      <input id="edit-image" [(ngModel)]="selectedBook.imageUrl" placeholder="Image URL" />
+      
+      <button (click)="updateBook()">Update Book</button>
+      <button (click)="selectedBook = null">Cancel</button>
+  </div>
+
+  <!-- Book List -->
+  <ul>
+      <li *ngFor="let book of books">
+          <img *ngIf="book.imageUrl" [src]="book.imageUrl" alt="{{ book.title }}" style="width: 50px; height: 75px; object-fit: cover;"/>
+          {{ book.title }} by {{ book.author }} ({{ book.publication_year }})
+          <button class="edit" (click)="editBook(book)">Edit</button>
+          <button class="delete" (click)="deleteBook(book.id)">Delete</button>
+      </li>
+  </ul>
+</div>
+
+  
